@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Shuneet';
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/Shuneet400.woff") format('woff');
+}
+
+@font-face {
+    font-family: 'Shuneet';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/Shuneet500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Shuneet';
+    font-weight: 600;
+    font-style: normal;
+    src: url("../fonts/Shuneet600.woff" ) format('woff');
+}
+
+@font-face {
+    font-family: 'Shuneet';
+    font-weight: 800;
+    font-style: normal;
+    src: url("../fonts/Shuneet800.woff") format('woff');
+}
+
+@font-face {
+    font-family: 'Ellinia CLM';
+    font-weight: 200;
+    font-style: normal;
+    src: url('../fonts/elliniaCLM200.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Ellinia CLM';
+    font-weight: 200;
+    font-style: italic;
+    src: url('../fonts/elliniaCLM200i.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Ellinia CLM';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/elliniaCLM700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Ellinia CLM';
+    font-weight: 700;
+    font-style: italic;
+    src: url('../fonts/elliniaCLM700i.woff') format('woff');
+}
