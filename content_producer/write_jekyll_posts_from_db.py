@@ -59,6 +59,7 @@ def generate_header_post(cursor, post):
     cur_file_post.write(f"""---
 layout: clean-layout
 title:  "{strip_title(post['title'])}"
+ymonth: {datetime.strftime(post['post_time'], '%Y-%m')}
 date:   {datetime.strftime(post['post_time'], '%Y-%m-%d')}
 ---
 """)
