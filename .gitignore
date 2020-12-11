@@ -7,5 +7,5 @@ _site/
 content_producer/__pycache__/
 .facebook/*
 ._posts/*
-/_posts/lessons_diary/
+._posts/lessons_diary/*
 
