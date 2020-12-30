@@ -5,7 +5,6 @@ _site/
 .DS_Store
 .idea/
 content_producer/__pycache__/
-.facebook/*
-._posts/*
-._posts/lessons_diary/*
+facebook/*
+_posts/
 

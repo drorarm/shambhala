@@ -56,36 +56,37 @@ def get_day_hashtag(title):
 if __name__ == '__main__':
     try:
         # tapuzUser = "DrorKFTC"
-        tapuzUser = "בהתחלה"
+        # tapuzUser = "בהתחלה"
+        tapuzUser = "Asa Wolfson"
         db = mysql.connector.connect(host='localhost',
                                      user='root',
                                      passwd='example',
                                      db='shambhala')
 
         c = db.cursor(dictionary=True)
-        # c.execute(f"""select ben.title as week_title, dror.title as lesson_title, dror.body as lessons_body
-        #             from
-        #             (select title,body, parent from lessons_diary where user_name = '{tapuzUser}') dror
-        #             join
-        #             (select id, title from lessons_diary
-        #             where root is null
-        #             and user_name in ('הדרכה פלאית', 'ידע פלאי')
-        #             and post_time > '2017-09-01'
-        #             and id > 1) ben on dror.parent = ben.id""")
-        c.execute(f"""select weeks.title as week_title, reebLessons.title as lesson_title, reebLessons.body as lessons_body 
-                        from
-                        (select id as reebRoot ,root as benRoot 
-                        from lessons_diary 
-                        where user_name = '{tapuzUser}' and root = parent and post_time >= '2017-10-30 08:47:00') reeb
-                        join 
-                        (select id, title from lessons_diary 
-                        where root is null 
-                        and user_name in ('הדרכה פלאית', 'ידע פלאי')
-                        and post_time > '2016-03-21 17:11:00'
-                        and id > 1) weeks on (reeb.benRoot = weeks.id)
-                        join 
-                        (select * from lessons_diary 
-                        where user_name = '{tapuzUser}') reebLessons on (reebLessons.parent = reeb.reebRoot)""")
+        c.execute(f"""select ben.title as week_title, dror.title as lesson_title, dror.body as lessons_body
+                    from
+                    (select title,body, parent from lessons_diary_old_tapuz where user_name = '{tapuzUser}') dror
+                    join
+                    (select id, title from lessons_diary_old_tapuz
+                    where root is null
+                    and user_name in ('הדרכה פלאית', 'ידע פלאי')
+                    and post_time > '2017-09-01'
+                    and id > 1) ben on dror.parent = ben.id""")
+        # c.execute(f"""select weeks.title as week_title, reebLessons.title as lesson_title, reebLessons.body as lessons_body
+        #                 from
+        #                 (select id as reebRoot ,root as benRoot
+        #                 from lessons_diary_old_tapuz
+        #                 where user_name = '{tapuzUser}' and root = parent and post_time >= '2017-10-30 08:47:00') reeb
+        #                 join
+        #                 (select id, title from lessons_diary_old_tapuz
+        #                 where root is null
+        #                 and user_name in ('הדרכה פלאית', 'ידע פלאי')
+        #                 and post_time > '2016-03-21 17:11:00'
+        #                 and id > 1) weeks on (reeb.benRoot = weeks.id)
+        #                 join
+        #                 (select * from lessons_diary_old_tapuz
+        #                 where user_name = '{tapuzUser}') reebLessons on (reebLessons.parent = reeb.reebRoot)""")
         posts = list(c.fetchall())
 
         print(len(posts))

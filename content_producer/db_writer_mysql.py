@@ -4,7 +4,7 @@ def insert_post(cursor, post, root = None, parent = None):
 
     # post_time,user_name, title
     md5_column = f"""{post['post_time']}-{post['user']}-{post['title'].replace("'", "''")}-{root}"""
-    statement = f"""INSERT IGNORE INTO lessons_diary
+    statement = f"""INSERT IGNORE INTO lessons_diary_old_tapuz
                     (title, post_time, user_name, lesson_code, body, html_body, root, parent,md5_column)
                     VALUES('{post['title'].replace("'", "''")}', '{post['post_time']}', '{post['user']}', 
                             '{post['code'].replace("'", "''") if 'code' in post.keys() else 'NULL'}', 
